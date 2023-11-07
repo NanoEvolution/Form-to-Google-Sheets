@@ -8,3 +8,14 @@ form.addEventListener('submit', e => {
   .then(() => { window.location.reload(); })
   .catch(error => console.error('Error!', error.message))
 })
+
+ // Función para cambiar el estilo del botón marcable
+ function toggleAcceptButton() {
+  var button = document.getElementById("accept-button");
+  var checkbox = document.getElementById("accept-terms");
+  if (checkbox.checked) {
+      button.classList.add("clicked");
+  } else {
+      button.classList.remove("clicked");
+  }
+}

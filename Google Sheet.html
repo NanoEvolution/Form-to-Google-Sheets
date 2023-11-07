@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="Google Sheet.css">
+    <link rel="stylesheet" href="Google Sheet.css">
+    <link rel="stylesheet" href="custom-styles.css"> <!-- Enlace a tu archivo CSS personalizado -->
     <title>Form HTML to Google Sheets</title>
-	<link rel="shortcut icon" href="Forms.png"> 
+    <link rel="shortcut icon" href="Forms.png"> 
 </head>
 <body>
-	<div class="container">
-		<form method="post" action="" name="contact-form">
-			<h4>Contact Us</h4>
-			<input type="text" name="Nombre" placeholder="Nombre">
-			<input type="text" name="Número" placeholder="Número de teléfono">
-			<input type="email" name="Email" placeholder="Email">
-			<textarea name="Mensaje" rows="7" placeholder="Tu mensaje"></textarea>
-			<input type="submit" value="Enviar" id="submit">
-		</form>
-	</div>
+    <div class="container">
+        <form method="post" action="" name="contact-form">
+            <h4>Contact Us</h4>
+            <input type="text" name="Nombre" placeholder="Nombre" required>
+            <input type="text" name="Número" placeholder="Número de teléfono" required>
+            <input type="email" name="Email" placeholder="Email" required>
+            <textarea name="Mensaje" rows="7" placeholder="Tu mensaje"></textarea>
+            
+            <!-- Botón marcable cuadrado y texto -->
+            <div class="accept-container">
+                <input type="checkbox" id="accept-terms" style="display: none;"> <!-- Input oculto -->
+                <label id="accept-button" for="accept-terms" onclick="toggleAcceptButton()"></label>
+                <label for="accept-terms" class="term-text">Acepto los términos y condiciones</label>
+            </div>
+            
+            <br>
+            <input type="submit" value="Enviar" id="submit">
+        </form>
+    </div>
 
-	<script src="Google Sheet.js"></script>
+    <script src="Google Sheet.js"></script>
 </body>
 </html>
